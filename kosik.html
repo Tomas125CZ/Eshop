@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Košík</title>
+    <script>
+        function load() {
+            setUp();
+            loadContent();
+        }
+        
+        var total = 26;
+        var names = Array(total);
+        var statuss = Array(total);
+        var prize = Array(total);
+        var images = Array(total);
+
+        function setUp() {
+            names[0] = "Hogwarts Legacy (PS5)";
+            images[0] = "images/hogwartslegacy.png";
+            prize[0] = "1 899 Kč";
+            statuss[0] = "Skladem";
+            names[1] = "Transport Fever 2 Console Edition (PS4)";
+            images[1] = "images/transportfever.jfif";
+            prize[1] = "999 Kč";
+            statuss[1] = "Není skladem";
+            names[2] = "Clash Artifacts of Chaos Zeno Edition (XBOX)";
+            images[2] = "images/clashartifactofchaos.jpg";
+            prize[2] = "799 Kč";
+            statuss[2] = "Není skladem";
+            names[3] = "Monster Energy Supercross 6 (PS4)";
+            images[3] = "images/monsterenergy.jfif";
+            prize[3] = "1 299 Kč";
+            statuss[3] = "Není skladem";
+            names[4] = "TRAIN LIFE: A RAILWAY SIMULATOR (SWITCH)";
+            images[4] = "images/trainlife.jfif";
+            prize[4] = "799 Kč";
+            statuss[4] = "Není skladem";
+            names[5] = "DC Justice League Cosmic Chaos (PS4)";
+            images[5] = "images/dcjusticechaos.webp";
+            prize[5] = "1 299 Kč";
+            statuss[5] = "Není skladem";
+            names[6] = "Gamedec Definitive Edition (PS5)";
+            images[6] = "images/gamedec.jfif";
+            prize[6] = "899 Kč";
+            statuss[6] = "Není skladem";
+            names[7] = "DYSCHRONIA CHRONOS ALTERNATE (PS5)";
+            images[7] = "images/dyschroniachronos.jfif";
+            prize[7] = "999 Kč";
+            statuss[7] = "Není skladem";
+            names[8] = "Anno 1800 Console Edition (PS5)";
+            images[8] = "images/anno1800.png";
+            prize[8] = "999 Kč";
+            statuss[8] = "Není skladem";
+            names[9] = "WWE 2K23 (PS4)";
+            images[9] = "images/wwe2k23.webp";
+            prize[9] = "2 399 Kč";
+            statuss[9] = "Není skladem";
+            names[10] = "PEPPA PIG: WORLD ADVENTURES (PS4)";
+            images[10] = "images/peppapig.jfif";
+            prize[10] = "1 099 Kč";
+            statuss[10] = "Není skladem";
+            names[11] = "Hogwarts Legacy Deluxe (PS4)";
+            images[11] = "images/hogwartslegacydeluxe.jpeg";
+            prize[11] = "2 099 Kč";
+            statuss[11] = "Není skladem";
+            names[12] = "PlayStation 5";
+            images[12] = "images/playstation5.webp";
+            prize[12] = "13 490 Kč";
+            statuss[12] = "Skladem";
+            names[13] = "PLAYSTATION 5 + GOD OF WAR RAGNAROK";
+            images[13] = "images/playstation5godofwar.webp";
+            prize[13] = "15 490 Kč";
+            statuss[13] = "Skladem";
+            names[14] = "PLAYSTATION 4 PRO";
+            images[14] = "images/ps4pro.webp";
+            prize[14] = "8 290 Kč";
+            statuss[14] = "Skladem";
+            names[15] = "MINECRAFT: NINTENDO SWITCH EDITION (NINTENDO)";
+            images[15] = "images/minecraftnintendo.png";
+            prize[15] = "749 Kč";
+            statuss[15] = "Skladem";
+            names[16] = "THE LEGEND OF ZELDA: BREATH OF THE WILD (NINTENDO)";
+            images[16] = "images/zeldanintendo.png";
+            prize[16] = "1 699 Kč";
+            statuss[16] = "Skladem";
+            names[17] = "FORZA HORIZON 5 (XBOX)";
+            images[17] = "images/forzahorizonxbox.png";
+            prize[17] = "1 499 Kč";
+            statuss[17] = "Skladem";
+            names[18] = "MINECRAFT DUNGEONS ULTIMATE EDITION (XBOX)";
+            images[18] = "images/minecraftdungeonsxbox.png";
+            prize[18] = "699 Kč";
+            statuss[18] = "Skladem";
+            names[19] = "STAR WARS JEDI: SURVIVOR (PC)";
+            images[19] = "images/starwarsjedi.jpg";
+            prize[19] = "1 799 Kč";
+            statuss[19] = "Není skladem";
+            names[20] = "COMPANY OF HEROES 3 LAUNCH EDITION METAL CASE (PC)";
+            images[20] = "images/companyofheroes3.png";
+            prize[20] = "1 299 Kč";
+            statuss[20] = "Skladem";
+            names[21] = "FIFA 23 (PC)";
+            images[21] = "images/fifa23.png";
+            prize[21] = "1 699 Kč";
+            statuss[21] = "Skladem";
+            names[22] = "NINTENDO SWITCH KONZOLE ČERVENÁ/MODRÁ";
+            images[22] = "images/nintendoswitch.webp";
+            prize[22] = "7 190 Kč";
+            statuss[22] = "Skladem";
+            names[23] = "XBOX SERIES S 512 GB";
+            images[23] = "images/xboxseriess.webp";
+            prize[23] = "5 990 Kč";
+            statuss[23] = "Skladem";
+            names[24] = "XBOX SERIES X 1 TB";
+            images[24] = "images/xboxseriesx.webp";
+            prize[24] = "10 290 Kč";
+            statuss[24] = "Skladem";
+            names[25] = "XBOX ONE S 500GB";
+            images[25] = "images/xboxone.webp";
+            prize[25] = "4 990 Kč";
+            statuss[25] = "Skladem";
+        }
+
+        function loadContent() {
+            var text = "";
+            var searched = localStorage.getItem("kosikContent");
+            if(searched != null) {
+                console.log(searched);
+                for(var i = 0; i < searched.split("%").length; i++) {
+                    var s = searched.split("%")[i].trim().toUpperCase();
+                    for(var x = 0; x < total; x++) {
+                        var color = "green";
+                        if(statuss[x] === "Není skladem") color = "red";
+                        console.log(s);
+                        if(names[x].toUpperCase() === s) {
+                            console.log("EQUALS");
+                            text += "<div class='kosikItem'><div class='kosikContent'><div><img src=" + images[x] + " alt=''></div><div><div class='kosikName'>" + names[x] + "</div><div class='kosikStatus " + color + "'>" + statuss[x] +"</div><div class='kosikPrize'>" + prize[x] + "</div><div class='close' onclick=" + "removeFromFile" + "('" + names[x].replaceAll(" ", "-") + "')"  +"><p>X</p></div></div></div></div>"
+                        }
+                    }
+                }
+            }
+            console.log(text);
+            document.getElementById("content").innerHTML = text;
+            if(text === "") {
+                document.getElementById("kosikBig").innerHTML = "Tvůj košík je prázdný!";
+            }
+        }
+    </script>
+</head>
+<body onload="load(), loadCart(true)">
+    <header>
+        <div class="head">
+            <a href="index.html"><img src="images/logo.png" alt="" class="logo"></a>
+            <form action="index2.html" class="searchbar">
+                <input type="text" name="search">
+                <br>
+                <button type="submit"><img src="images/search.png"></button>
+            </form>
+            <div class="t" id="cart"></div>
+        </div>
+    </header>
+    <nav>
+        <div class="section ps" onmouseenter="hover('playstation', true)" onmouseleave="unhover('playstation')" onclick="openWebsite('index2.html?search=search+playstation+5+.,.')">
+            <p>PLAYSTATION</p>
+            <div class="animation"></div>
+        </div>
+        <div class="section nt" onmouseenter="hover('nintendo', true)" onmouseleave="unhover('nintendo')" onclick="openWebsite('index2.html?search=search+nintendo+switch+.,.')">
+            <p>NINTENDO</p>
+            <div class="animation"></div>
+        </div>
+        <div class="section xb" onmouseenter="hover('xbox', true)" onmouseleave="unhover('xbox')" onclick="openWebsite('index2.html?search=search+XBOX+SERIES+.,.')">
+            <p>XBOX</p>
+            <div class="animation"></div>
+        </div>
+        <div class="section pc" onmouseenter="hover('pc', true)" onmouseleave="unhover('pc')"  onclick="openWebsite('index2.html?search=search+PC+game+.,.')">
+            <p>PC</p>
+            <div class="animation"></div>
+        </div>
+    </nav>
+    <div id="hoverBlocks">
+        <div class="sectionhoverblock playstations" onmouseenter="hover('playstation')" onmouseleave="unhover('playstation')">
+            <div class="sectionmenu">
+                <div class="sectionpart">
+                    <img src="images/hogwartslegacy.png" alt="">
+                    <div class="sectionparttext">
+                        <a href="index2.html?search=search+playstation+5+.,.">PlayStation 5</a>
+                        <div class="sectionpartlinks">
+                            <a href="index2.html?search=search+playstation+5+game+.,.">Hry</a>
+                            <a href="index2.html?search=search+playstation+5+.,.">Konzole</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sectionpart">
+                    <img src="images/hogwartslegacydeluxe.jpeg"  alt="">
+                    <div class="sectionparttext">
+                        <a href="index2.html?search=search+playstation+4+.,.">PlayStation 4</a>
+                        <div class="sectionpartlinks">
+                            <a href="index2.html?search=search+playstation+4+game+.,.">Hry</a>
+                            <a href="index2.html?search=search+playstation+4+.,.">Konzole</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sectionhoverblock nintendos" onmouseenter="hover('nintendo')" onmouseleave="unhover('nintendo')">
+            <div class="sectionmenu">
+                <div class="sectionpart">
+                    <img src="images/hogwartslegacynt.webp" alt="">
+                    <div class="sectionparttext">
+                        <a href="index2.html?search=search+nintendo+switch+.,.">Nintendo Switch</a>
+                        <div class="sectionpartlinks">
+                            <a href="index2.html?search=search+nintendo+game+.,.">Hry</a>
+                            <a href="index2.html?search=search+nintendo+switch+.,.">Konzole</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sectionhoverblock xboxs" onmouseenter="hover('xbox')" onmouseleave="unhover('xbox')">
+            <div class="sectionmenu">
+                <div class="sectionpart">
+                    <img src="images/hogwartslegacyxbseries.png" alt="">
+                    <div class="sectionparttext">
+                        <a href="index2.html?search=search+XBOX+SERIES+.,.">Xbox Series</a>
+                        <div class="sectionpartlinks">
+                            <a href="index2.html?search=search+xbox+game+.,.">Hry</a>
+                            <a href="index2.html?search=search+XBOX+SERIES+.,.">Konzole</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sectionpart">
+                    <img src="images/hogwartslegacyxbone.jpeg"  alt="">
+                    <div class="sectionparttext">
+                        <a href="index2.html?search=search+XBOX+ONE+.,.">Xbox One</a>
+                        <div class="sectionpartlinks">
+                            <a href="index2.html?search=search+xbox+game+.,.">Hry</a>
+                            <a href="index2.html?search=search+XBOX+ONE+.,.">Konzole</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sectionhoverblock pcs" onmouseenter="hover('pc')" onmouseleave="unhover('pc')">
+            <div class="sectionmenu">
+                <div class="sectionpart">
+                    <img src="images/starwarsjedi.jpg"  alt="">
+                    <div class="sectionparttext">
+                        <a href="index2.html?search=search+PC+game+.,.">Hry</a>
+                        <div class="sectionpartlinks">
+                            <a href="index2.html?search=search+PC+game+.,.">Hry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 id="kosikBig">Obsah tvého košíku:</h1>
+    <div id="content">
+        <div class="kosikItem">
+            <div class="kosikContent">
+                <div>
+                    <img src="images/monsterenergy.jfif" alt="">
+                </div>
+                <div>
+                    <div class="kosikName">Monster Energy Supercross 6 (PS4)</div>
+                    <div class="kosikStatus red">Není skladem</div>
+                    <div class="kosikPrize">1 299 Kč</div>
+                    <div class="close"><p>X</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
